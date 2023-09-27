@@ -1294,15 +1294,30 @@ def A_canada_04():
 #endregion
 
 #region A_usa_01_a 先驅化學品I類（毒品先驅物）
-    #; 沒找到 
+def A_usa_01_a():
+    file = os.path.join(input_path, 'A_usa_01_a.txt')
+    with open(file, 'r') as f:
+        s = f.read().split('\n')
+        s = [i.strip() for i in s]
+    df = pd.DataFrame(s, columns = ['ChemicalEngName'])
+    df.to_excel(os.path.join(processed_path, 'A_usa_01_a.xlsx'), index = False)
+
 #endregion
 
 #region A_usa_01_b 先驅化學品II類（毒品先驅物）
-    #; 沒找到 
+def A_usa_01_b():
+    file = os.path.join(input_path, 'A_usa_01_b.txt')
+    with open(file, 'r') as f:
+        s = f.read().split('\n')
+        s = [i.strip() for i in s]
+    df = pd.DataFrame(s, columns = ['ChemicalEngName'])
+    df.to_excel(os.path.join(processed_path, 'A_usa_01_b.xlsx'), index = False)
+
 #endregion
 
 #region A_usa_02 有毒物質TRI排放清單
-    #; 這個非常麻煩，最後處理 
+def A_usa_02():
+    print('手動處理')
 #endregion
 
 #region A_usa_03 國土安全部化學品設施反恐標準（IED先驅物）
